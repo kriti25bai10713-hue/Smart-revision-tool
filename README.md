@@ -1,85 +1,62 @@
-# Smart-revision-tool
-# 🧠 Smart Revision Tool
 
-A Python-based program that helps students revise faster by automatically generating flashcards from their notes. This tool transforms long text into concise question–answer pairs using basic NLP techniques.
+# 🧠 Smart Revision Tool: NLP Flashcard Generator
 
----
+## 📌 Project Overview
+The Smart Revision Tool is an AI-powered educational utility designed to transform dense academic notes into concise Question-and-Answer pairs. By utilizing Natural Language Processing (NLP), the tool identifies key concepts and automates the creation of flashcards to facilitate active recall.
 
-## 📌 Features
+## 🚀 Features
+* **Text Preprocessing**: Cleans and tokenizes raw text notes into structured sentences[cite: 26].
+* **NLP-Based QA Generation**: Uses Part-of-Speech (POS) tagging to identify nouns and create "fill-in-the-blank" questions[cite: 49].
+* **Modular Architecture**: Built with separate modules for validation, processing, and exporting to ensure maintainability[cite: 50, 55].
+* **Automated Export**: Generates a formatted study sheet (`.txt`) for offline revision[cite: 28].
 
-- Converts plain text notes into flashcards
-- Uses sentence tokenization and word tokenization
-- Outputs Q/A pairs for quick revision
-- Lightweight and beginner-friendly
-- Runs from the command line (no GUI required)
-
----
-
-## 🚀 Setup Instructions
-
-### 1. Clone the Repository
-
-```bash
-
-git clone https://github.com/{your-username}/smart-revision-tool
-cd smart-revision-tool
-
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-pip install -r requirements.txt
-```
-
+## 🛠 Technologies Used
+* **Language**: Python 3.x
+* **Library**: NLTK (Natural Language Toolkit)
+* **Environment**: Google Colab / Local CLI
+* **Version Control**: Git/GitHub
 
 ## 📂 File Structure
+Following academic standards for modular implementation:
 ```text
 smart-revision-tool/
 ├── src/
-│   └── main.py              # Main script to run the tool
+│   ├── main.py              # Application entry point
+│   ├── processor.py         # NLP & Keyword extraction logic
+│   ├── validator.py         # Input validation & error handling
+│   └── exporter.py          # File I/O and reporting modules
 ├── data/
-│   └── sample_notes.txt     # Example notes for testing
+│   └── sample_notes.txt     # Test data for evaluation
 ├── docs/
-│   └── project_report.pdf   # Detailed project report
-├── README.md                # This file
-└── requirements.txt         # Python dependencies
+│   └── system_architecture.png # Visual design artifact
+├── README.md                # Project documentation [cite: 83]
+├── statement.md             # Problem statement & scope [cite: 95]
+└── requirements.txt         # Project dependencies
 ```
 
-## 🧪 How to Run
+## Clone the Repository:
+```bash
+git clone [https://github.com/your-username/smart-revision-tool.git](https://github.com/your-username/smart-revision-tool.git)
+cd smart-revision-tool
+```
+## Create a Virtual Environment:
+```bash
+# Create the environment
+python -m venv venv
+
+# Activate on Windows:
+venv\Scripts\activate
+
+# Activate on macOS/Linux:
+source venv/bin/activate
+```
+## Install Dependencies:
+```bash
+pip install nltk
+```
+## How to Run
 ```bash
 python src/main.py
 ```
 
-## ✍️ Input Format
-```python
-notes = """
-Photosynthesis converts light energy into chemical energy.
-Acid rain is caused by sulfur dioxide and nitrogen oxides.
-The nitrogen cycle involves fixation, nitrification, and denitrification.
-"""
-```
 
-## 📤 Sample Output
-```text
-Q: What is the key idea in: 'Photosynthesis converts light energy into chemical energy.'?
-A: Photosynthesis converts light energy into...
-
-Q: What is the key idea in: 'Acid rain is caused by sulfur dioxide and nitrogen oxides.'?
-A: Acid rain is caused by...
-
-Q: What is the key idea in: 'The nitrogen cycle involves fixation, nitrification, and denitrification.'?
-A: The nitrogen cycle involves fixation...
-```
-
-## 🛠 Technologies Used
-
-- Python 3.x  
-- NLTK (Natural Language Toolkit)  
-- Google Colab (for development)
-
-
-## 📈 Future Enhancements
-
-- Add mnemonic generator  
-- Save flashcards to CSV or JSON  
-- Build a CLI interface for user input  
-- Support multi-subject note parsing
